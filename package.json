@@ -1,0 +1,24 @@
+{
+  "name": "twdata-11ty-v2",
+  "version": "1.0.0",
+  "description": "if, again, it doesn't work, at the v least document the debugging process smh.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winnieepm/twdata-11ty-v2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/winnieepm/twdata-11ty-v2/issues"
+  },
+  "homepage": "https://github.com/winnieepm/twdata-11ty-v2#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}
