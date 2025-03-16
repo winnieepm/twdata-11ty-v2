@@ -1,20 +1,33 @@
+{# mk an orphan tweet page pulling data from json file #}
+
 ---
-title: tweet test
-permalink: "tweets/tweets.html/"
+permalink: "tweets/index.html"
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tweet by {{ tweet.username }}</title>
-</head>
-<body>
-  <article>
-    <h1>Tweet by {{ tweetID.username }}</h1>
-    <p>{{ tweet.content }}</p>
-    <time datetime="{{ tweet.date }}">{{ tweet.date }}</time>
-  </article>
-</body>
-</html>
+<h1>All Tweets</h1>
+
+{% for key, tweet in tweets %}
+<article class="tweet">
+  <p><strong>@anonymous</strong></p>
+  <p>{{ tweet.text }}</p>
+  <p><small>{{ tweet.created_at }}</small></p>
+</article>
+{% endfor %}
+
+
+{#
+{% for tweet in tweets %}
+<article class="tweet">
+  <p><strong>@anonymous</strong></p>
+  <p>{{ tweet.text }}</p>
+  <p><small>{{ tweet.created_at }}</small></p>
+  
+  {% if tweet.retweeted_status %}
+    <blockquote>
+      <p>{{ tweet.retweeted_status.text }}</p>
+      <p><small>{{ tweet.retweeted_status.created_at }}</small></p>
+    </blockquote>
+  {% endif %}
+</article>
+{% endfor %}
+#}
