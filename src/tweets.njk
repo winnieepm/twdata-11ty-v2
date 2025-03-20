@@ -1,10 +1,10 @@
-{# mk an orphan tweet page pulling data from json file #}
-
 ---
 permalink: "tweets/index.html"
+layout: 'layouts/tweets.html'
+title: "All Tweets"
 ---
 
-<h1>All Tweets</h1>
+{# mk an orphan tweet page pulling data from json file #}
 
 {% for tweet_id in twids %}
 <article class="tweet">
