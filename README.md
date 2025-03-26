@@ -1,8 +1,11 @@
 # dev notes
 if, again, it doesn't work, at the v least document the debugging process smh. 
 
+### 2025-03-26
+generated a single page for each tweet that pulls data from the `twids.json` successfully. now edit the `twSingle.njk` to mk a draft of the full expanded view.
+
 ### 2025-03-15
-made a bare bones template for orphan tweets. it wasn't working before because the json tweet data is an `object`, not an `array`. when pulling data from an `object` in a `for loop`, the syntax changes to include the key value: `{% for key, tweet in tweets %}` as opposed to simply `{% for tweet in tweets %}`as you'd write for an `array`. 
+made a bare bones template for single tweets. it wasn't working before because the json tweet data is an `object`, not an `array`. when pulling data from an `object` in a `for loop`, the syntax changes to include the key value: `{% for key, tweet in tweets %}` as opposed to simply `{% for tweet in tweets %}`as you'd write for an `array`. 
 
 now, can you pull in data from different jsons in the same .njk template, especially in a single `for loop`? right now, tweet content is stored in `tweets.json` and their user's in `users.json`. 
 
