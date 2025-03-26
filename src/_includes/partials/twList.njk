@@ -1,0 +1,14 @@
+{# lists all single-tweets  #}
+
+{% block content %}
+  {% for tweet_id in twids %}
+  <article class="tweet">
+      <p><strong>@{{ users[tweets[tweet_id].user_id].screen_name }}</strong></p>
+      <a href="tweets/{{ tweet_id | slugify }}/">  
+        <p>{{ tweets[tweet_id].text }}</p>
+      </a>
+      <p><small>{{ tweets[tweet_id].created_at }}</small></p>
+    
+  </article>
+{% endfor %}
+{% endblock %}
