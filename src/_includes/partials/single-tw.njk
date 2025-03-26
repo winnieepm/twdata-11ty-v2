@@ -1,0 +1,11 @@
+{# shows all single-tweets  #}
+
+{% block content %}
+  {% for tweet_id in twids %}
+  <article class="tweet">
+    <p><strong>@{{ users[tweets[tweet_id].user_id].screen_name }}</strong></p>
+    <p>{{ tweets[tweet_id].text }}</p>
+    <p><small>{{ tweets[tweet_id].created_at }}</small></p>
+  </article>
+{% endfor %}
+{% endblock %}
