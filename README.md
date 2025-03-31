@@ -1,6 +1,9 @@
 # dev notes
 if, again, it doesn't work, at the v least document the debugging process smh. 
 
+### 2025-03-31
+spent a lifetime figuring out why `justify-content` wasn't working only to find i should've used `align-items`. add lunr now.
+
 ### 2025-03-26
 generated a single page for each tweet that pulls data from the `twids.json` successfully. now edit the `twSingle.njk` to mk a draft of the full expanded view.
 
