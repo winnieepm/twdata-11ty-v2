@@ -1,4 +1,4 @@
-# Misc
+# misc
 *.log
 npm-debug.*
 *.scssc
@@ -8,7 +8,7 @@ npm-debug.*
 .env
 .cache
 
-# Node modules and output
+# node modules and output
 node_modules
 dist
 
