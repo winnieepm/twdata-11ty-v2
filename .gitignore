@@ -7,8 +7,10 @@ npm-debug.*
 .sass-cache
 .env
 .cache
+src/_data/tweets.json
+src/_data/twids.json
+src/_data/users.json
 
 # Node modules and output
 node_modules
 dist
-src/_includes/css
