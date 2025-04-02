@@ -8,6 +8,8 @@ layout: '/layouts/home.njk'
 title: 'expanded view'
 ---
 
+{# when ready, replace this comment with include "partials/search.njk here #}
+
 {% include "partials/twSingle.njk" %}
 
 {#  if reply: true render template replyThread.njk #}
