@@ -1,5 +1,8 @@
 # dev notes
-if, again, it doesn't work, at the v least document the debugging process smh. 
+mostly observations/issues with development. sometimes, the notes mark a checkpoint. 
+
+### 2025-04-01
+created `tw-search-build.js` to generate the data json and creates the search index. now i need to add the search logic to `tw-search.js`. this is all stored in the `search-fn` branch until it's working and tested. 
 
 ### 2025-03-31
 spent a lifetime figuring out why `justify-content` wasn't working only to find i should've used `align-items`. add lunr now.
