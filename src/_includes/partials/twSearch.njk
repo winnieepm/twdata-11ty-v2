@@ -1,8 +1,12 @@
----
-permalink: /index.json
----
 {# this template builds the lunr.js search function to navigate the tweet data. #}
 
 {% block content %}
-    
+    <h1>{{ title }}</h1>
+    <div id="search-container">
+        <input type="text" id="searchBox" placeholder="Search tweets…" aria-label="Search tweets" />
+        <ul id="searchResults"></ul>
+    </div>
+
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script src="/search.js"></script>
 {% endblock %}

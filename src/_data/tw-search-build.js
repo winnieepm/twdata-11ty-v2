@@ -1,8 +1,8 @@
 // this code builds the index.json from the tweets' data files. 
 const lunr = require("lunr");
-const tw = require("tweets.json");
-const twid = require("twids.json");
-const user = require("users.json");
+const tw = require("./tweets.json");
+const twid = require("./twids.json");
+const user = require("./users.json");
 
 module.exports = () => {
 
