@@ -1,6 +1,7 @@
 {# lists all single-tweets  #}
 
 {% block content %}
+  <div class="container--col-view">
     {% for tweet_id in twids %}
       <article class="tweet">
           <p><strong>@{{ users[tweets[tweet_id].user_id].screen_name }}</strong></p>
@@ -10,4 +11,5 @@
           <p><small>{{ tweets[tweet_id].created_at }}</small></p>
       </article>
     {% endfor %}
+  </div>
 {% endblock %}
