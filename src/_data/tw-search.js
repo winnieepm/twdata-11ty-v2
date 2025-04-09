@@ -1,6 +1,6 @@
 // this will be the logic for the lunr search function
 async function search(query) {
-  const response = await fetch("/search.json");
+  const response = await fetch("./tw-search.json");
   const data = await response.json();
 
   // Load Lunr.js index
