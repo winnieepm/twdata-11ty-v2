@@ -1,32 +1,25 @@
 // this file builds the index.json from the tweets' data files. 
 
 const lunr = require("lunr");
-const tw = require("./tweets.json");
+const tweetCont = require("./tweets.json");
 const twid = require("./twids.json");
 const user = require("./users.json");
 
-module.exports = () => {
+// the following code works as expected when running `node script-name.js`
+const tweetData = Object.values(tweetCont).map(values => ({
+    id:`${values.id}`,
+    likes: `${values.favorite_count}`,
+    text: `${values.text}`
+}));
 
-    // converts `tweets.json` into a search-friendly format
-    const tweetData = Object.values(tw).map(twid => ({
-        id: `twid-${tw[twid].id}`,
-        likes: `${ tw[twid].favorite_count }`,
-        user: `${ users[tw[twid].user_id].screen_name }`
-    }));
+const lunrIndex = lunr(function () {
+    this.ref('id');
+    this.field('likes');
+    this.field('text');
 
-    // create a lunr search index
-    const lunrIndex = lunr(function () {
-        this.ref("id");
-        this.field("likes");
-        this.field("user");
+    tweetData.forEach(function (doc) {
+      this.add(doc)
+    }, this)});
 
-    tweetData.forEach(doc => this.add(doc));
-  });
-
-  return {
-    permalink: "tw-search.json", // Forces output as `tw-search.json`
-    eleventyExcludeFromCollections: true, // Avoid adding to collections
-    documents: tweetData,   // Stores raw tweet data
-    index: lunrIndex.toJSON() // Stores pre-built Lunr.js index
-  };
-};
+  // console.log(tweetData)
+console.log(lunrIndex.search("the"));
