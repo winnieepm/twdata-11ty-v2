@@ -9,6 +9,7 @@ pagination:
 this precedes the display of all single tweets from `partials/single-tw.njk`.
 
 {% for tweet_id in pagination.items %}
+    <!-- add tweet count: "Showing tweets 0–20" and so on-->
     <article class="tweet">
         <p><strong>@{{ users[tweets[tweet_id].user_id].screen_name }}</strong></p>
         <a href="tweets/{{ tweet_id | slugify }}/">
@@ -20,5 +21,6 @@ this precedes the display of all single tweets from `partials/single-tw.njk`.
 
 <nav aria-labelledby="my-pagination">
     <button>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</button>
+    <!-- add in between pages "...2, 3, 4..." -->
     <button>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</button>
 </nav>
