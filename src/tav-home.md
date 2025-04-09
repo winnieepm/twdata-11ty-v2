@@ -4,17 +4,10 @@ layout: 'layouts/home.njk'
 title: 'twitter archive viewer'
 pagination:
     data: twids
-    size: 200
+    size: 20
 ---
 this precedes the display of all single tweets from `partials/single-tw.njk`.
 
-<nav aria-labelledby="my-pagination">
-  <ol>
-{%- for pageEntry in pagination.pages %}
-    <li><a href="{{ pagination.hrefs[ loop.index0 ] }}" aria-label="Page {{ loop.index }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>{{ loop.index }}</a></li>
-{%- endfor %}
-  </ol>
-</nav>
 {% for tweet_id in pagination.items %}
     <article class="tweet">
         <p><strong>@{{ users[tweets[tweet_id].user_id].screen_name }}</strong></p>
@@ -24,3 +17,8 @@ this precedes the display of all single tweets from `partials/single-tw.njk`.
         <p><small>{{ tweets[tweet_id].created_at }}</small></p>
     </article>
 {% endfor %}
+
+<nav aria-labelledby="my-pagination">
+    <button>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</button>
+    <button>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</button>
+</nav>
