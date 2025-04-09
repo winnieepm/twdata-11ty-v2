@@ -1,4 +1,5 @@
 # misc
+# misc
 *.log
 npm-debug.*
 *.scssc
@@ -9,8 +10,14 @@ npm-debug.*
 .cache
 
 # node modules and output
+# node modules and output
 node_modules
 dist
+
+# twitter data files
+src/_data/tweets.json
+src/_data/twids.json
+src/_data/users.json
 
 # twitter data files
 src/_data/tweets.json
