@@ -22,7 +22,7 @@ const lunrIndex = lunr(function () {
       this.add(doc)
     }, this)});
 
-// console.log(tweetData) dev testing line 
+console.log(tweetData);
 
 // the line below doesn't show search results. is this normal? where do i see them, then?
-// console.log(lunrIndex.search("the"));
+// console.log(lunrIndex.search("the"))
