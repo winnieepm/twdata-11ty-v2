@@ -2,17 +2,15 @@
 
 const lunr = require("lunr");
 const tweetCont = require("./tweets.json");
-const twid = require("./twids.json");
-const user = require("./users.json");
 
-// the following code works as expected when running `node script-name.js`. it creates an array in json format with the selected data from _data/
+// creates the data array with filtered fields from tweets.json
 const tweetData = Object.values(tweetCont).map(values => ({
     id:`${values.id}`,
     likes: `${values.favorite_count}`,
     text: `${values.text}`
 }));
 
-// still am not sure if this is working or where to "see" the search results.
+// pre-builds lunr search index. you can search with it. remember it removes stop words.
 const lunrIndex = lunr(function () {
     this.ref('id');
     this.field('likes');
@@ -22,7 +20,9 @@ const lunrIndex = lunr(function () {
       this.add(doc)
     }, this)});
 
-console.log(tweetData);
-
-// the line below doesn't show search results. is this normal? where do i see them, then?
-// console.log(lunrIndex.search("the"))
+// stores search results for display
+  results = lunrIndex.search("rally") // search
+    for (let i = 0; i < results.length; i++) { // loop through results
+      // console.log(results[i]['ref']);
+      console.log(tweetCont[results[i]['ref']]); //log each tweet
+    };
