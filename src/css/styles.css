@@ -8,10 +8,30 @@
     display: flex;
 }
 
+/* tweet link styling START */
+.tweet a:link  {
+    text-decoration: none;
+    color: blakck;
+}
+.tweet a:hover {
+    color: black;
+    font-weight: bold;
+}
+.tweet a:visited {
+    color: #c46404;
+}
+/* END link styling  */
+
+/* tweet styling START */
 .tweet {
     width: 60%;
     margin: 1%;
     padding: .5em;
     border-radius: 1em;
-    background-color: rgb(182, 152, 230);
+    background-color: #91d8f2;
 }   
+
+.tw-content {
+    margin: .5em;
+}
+/* tweet styling START */

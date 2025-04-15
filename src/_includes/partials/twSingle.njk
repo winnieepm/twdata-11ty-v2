@@ -2,22 +2,24 @@
 {# mk a single page for each tweet. this view expands metadata display  #}
 
 {% block content %}
-    <p>this comes from the `/partials/twSingle.njk`</p>
+<p>this comes from the `/partials/twSingle.njk`</p>
 
-    <article class="tweet">
-    <div class="tw-head">
-        <span class="user_name">@{{ users[tweets[tw].user_id].screen_name }}</span> 
-        <span><a href="json-id012345678.html">JSON</a></span>
-        <span class="user_id">{{ tweets[tw].user_id }}</span>
-    </div>
-    <div>
-        <p class="tw_text">{{ tweets[tw].text }}</p>
-    </div>
-    <div class="tw_bottom">
-        <p>{{ tweets[tw].created_at }}</p>
-        <p>{{ tweets[tw].favorite_count }}</p>
-        <p>{{ tweets[tw].retweet_count }}</p>
-        <p>Replies</p>
+<article class="tweet">
+    <div class="tw-content">
+        <div class="tw-head">
+            <span class="user_name"><strong>@{{ users[tweets[tw].user_id].screen_name }}</strong></span> 
+            <span><a href="json-id012345678.html">JSON</a></span>
+            <span class="user_id">{{ tweets[tw].user_id }}</span>
+        </div>
+        
+        <p class="tw-text">{{ tweets[tw].text }}</p>
+
+        <div class="tw-bottom">
+            <p>{{ tweets[tw].created_at }}</p>
+            <p>{{ tweets[tw].favorite_count }}</p>
+            <p>{{ tweets[tw].retweet_count }}</p>
+            <p>Replies</p>
+        </div>
     </div>
 </article>
 {% endblock %}
