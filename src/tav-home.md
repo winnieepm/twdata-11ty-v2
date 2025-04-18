@@ -8,13 +8,17 @@ pagination:
 ---
 this precedes the display of all single tweets from `partials/single-tw.njk`.
 
-<nav aria-labelledby="my-pagination">
+{% include "src/_includes/partials/search.njk" %}
+
+<!-- code in progress for footer pagination. this should be on main, not on this branch.
+ <nav aria-labelledby="my-pagination">
   <ol>
 {%- for pageEntry in pagination.pages %}
     <li><a href="{{ pagination.hrefs[ loop.index0 ] }}" aria-label="Page {{ loop.index }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>{{ loop.index }}</a></li>
 {%- endfor %}
   </ol>
-</nav>
+</nav> -->
+
 {% for tweet_id in pagination.items %}
     <article class="tweet">
         <p><strong>@{{ users[tweets[tweet_id].user_id].screen_name }}</strong></p>
