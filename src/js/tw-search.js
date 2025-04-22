@@ -3,21 +3,22 @@ console.log("Hi Jeremy")
 idxFile = '/_data/index.json';
 corpusFile = '/_data/tweets.json';
 
+var idx;
 async function getData() {
   try {
     const response = await fetch(idxFile);
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
-
     const json = await response.json();
-    console.log(json);
+    idx = lunr.Index.load(json)
   } catch (error) {
     console.error(error.message);
   }
 }
 
 getData()
+console.log(idx)
 
 // // stores search results for display
 //   results = lunrIndex.search("rally") // search
