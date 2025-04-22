@@ -1,23 +1,23 @@
-// this file builds the index.json from the tweets' data files. 
 const lunr = require("lunr");
-const tweetCont = require("./tweets.json");
 
-// creates the data array with filtered fields from tweets.json
-const tweetData = Object.values(tweetCont).map(values => ({
-    id:`${values.id}`,
-    likes: `${values.favorite_count}`,
-    text: `${values.text}`
-}));
+idxFile = './_data/index.json';
+corpusFile = './_data/tweets.json';
 
-// pre-builds lunr search index. you can search with it. remember it removes stop words.
-const lunrIndex = lunr(function () {
-    this.ref('id');
-    this.field('likes');
-    this.field('text');
+async function getData() {
+  try {
+    const response = await fetch(idxFile);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
 
-    tweetData.forEach(function (doc) {
-      this.add(doc)
-    }, this)});
+    const json = await response.json();
+    console.log(json);
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
+getData()
 
 // // stores search results for display
 //   results = lunrIndex.search("rally") // search
@@ -40,7 +40,7 @@ const lunrIndex = lunr(function () {
 
     // 3. Display new results (modified from your loop)
     for (let i = 0; i < results.length; i++) {
-      const tweet = tweetCont[results[i]['ref']];
+      const tweet = tweets[results[i]['ref']];
       resultsDiv.innerHTML += `<p>${tweet}</p>`; // Append each result
     }
 

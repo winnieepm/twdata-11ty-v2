@@ -18,8 +18,4 @@ dist
 src/_data/tweets.json
 src/_data/twids.json
 src/_data/users.json
-
-# twitter data files
-src/_data/tweets.json
-src/_data/twids.json
-src/_data/users.json
+src/_data/index.json

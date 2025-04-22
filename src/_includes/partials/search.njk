@@ -1,8 +1,10 @@
 {% block content %}
 <!-- Simple search box -->
-<input type="text" id="search-box" placeholder="Type a term...">
+<input type="text" id="search-box" placeholder="Type a term ...">
 <button onclick="runSearch()">Search</button>
 
 <!-- Results will appear here -->
 <div id="results"></div>
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script src="/_data/tw-search.js"></script>
 {% endblock %}
