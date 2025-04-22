@@ -1,7 +1,7 @@
-const lunr = require("lunr");
+console.log("Hi Jeremy")
 
-idxFile = './_data/index.json';
-corpusFile = './_data/tweets.json';
+idxFile = '/_data/index.json';
+corpusFile = '/_data/tweets.json';
 
 async function getData() {
   try {
