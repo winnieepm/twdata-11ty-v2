@@ -4,7 +4,9 @@ idxFile = '/_data/index.json';
 corpusFile = '/_data/tweets.json';
 
 var idx;
-async function getData() {
+var corpus;
+
+async function getIndex() {
   try {
     const response = await fetch(idxFile);
     if (!response.ok) {
@@ -16,9 +18,20 @@ async function getData() {
     console.error(error.message);
   }
 }
+async function getCorpus() {
+  try {
+    const response = await fetch(corpusFile);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+    corpus = await response.json();
+  } catch (error) {
+    console.error(error.message);
+  }
+}
 
-getData()
-console.log(idx)
+getIndex()
+getCorpus()
 
 // // stores search results for display
 //   results = lunrIndex.search("rally") // search
