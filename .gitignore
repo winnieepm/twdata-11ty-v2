@@ -8,6 +8,7 @@ npm-debug.*
 .sass-cache
 .env
 .cache
+*.DS_Store
 
 # node modules and output
 # node modules and output
